@@ -1,19 +1,17 @@
 package env
 
 import (
+	"fmt"
 	"os"
 	"strconv"
 )
 
 func GetString(key, fallback string) string {
 	val, ok := os.LookupEnv(key)
-
-	println("env", val)
-
+	fmt.Printf("Looking up %s: found=%v, value=%s\n", key, ok, val)
 	if !ok {
 		return fallback
 	}
-
 	return val
 }
 
