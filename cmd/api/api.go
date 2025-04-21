@@ -51,7 +51,7 @@ func (app *application) run(mux http.Handler) error {
 		IdleTimeout:  time.Minute,
 	}
 
-	log.Printf("Server started at %s", app.config.addr)
+	log.Printf("Server started at http://localhost%s/", app.config.addr)
 
 	return srv.ListenAndServe()
 }
